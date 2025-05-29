@@ -22,8 +22,10 @@ class SitemapController {
       await crawler.crawl();
       const pages = crawler.getPages();
       
+      // Use the provided URL as hostname for sitemap generation
+      const sitemapPath = await SitemapService.generate(pages, 'backend/public/sitemap.xml', url);
+      
       await Website.savePages(websiteId, pages);
-      const sitemapPath = await SitemapService.generate(pages);
       
       res.status(201).json({ 
         id: websiteId,

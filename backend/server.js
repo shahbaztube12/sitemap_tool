@@ -5,32 +5,48 @@ const sitemapRouter = require('./route/sitemap.route');
 const cors = require('cors');
 const path = require('path');
 
-
 const app = express();
-
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
-
 const PORT = 4000;
-db;
 
-// Middleware
+// ✅ Allowed Origins List
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://sitemap-frontend-01.vercel.app'
+];
+
+// ✅ CORS Configuration
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+};
+
+// ✅ Apply CORS Middleware
+app.use(cors(corsOptions));
+
+// ✅ Preflight Support (with custom CORS options)
+app.options('*', cors(corsOptions));
+
+// ✅ Body Parser Middleware
 app.use(bodyParser.json());
 
-// Serve static files from backend/public
+// ✅ Serve static files from /public
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// Routes
+// ✅ API Routes
 app.use('/api/sitemap', sitemapRouter);
 
-// Basic health check
+// ✅ Health Check Route
 app.get('/', (req, res) => {
   res.json({ status: 'Server is running' });
 });
 
-// Show databases endpoint
+// ✅ Optional: Check MySQL Databases
 app.get('/api/databases', async (req, res) => {
   try {
     const [rows] = await db.query('SHOW DATABASES');
@@ -41,7 +57,7 @@ app.get('/api/databases', async (req, res) => {
   }
 });
 
-// Start server
+// ✅ Start Server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
