@@ -1,0 +1,157 @@
+.link-button {
+  /* background-color: #004080; blue background */
+  border: none;
+  color: rgb(255, 255, 255); /* black text */
+  text-decoration: none; /* remove underline */
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.link-button:hover,
+.link-button:focus {
+  color: white; /* white text on hover */
+  outline: none;
+  /* background-color: #0056b3; darker blue on hover */
+}
+
+.footer {
+  background-color: #004080; /* blue background */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: rgb(255, 255, 255); /* text color black */
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 150px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 6px;
+}
+
+.footer-legal {
+  margin-top: 20px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+}
+
+.footer-legal p {
+  margin: 4px 0;
+}
+
+
+.footer {
+  background-color: #111827;
+  color: #d1d5db;
+  padding: 2rem 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer-column {
+  min-width: 180px;
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #f3f4f6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-logo {
+    text-align: center;
+  }
+}

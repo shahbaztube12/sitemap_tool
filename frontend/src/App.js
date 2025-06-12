@@ -1,90 +1,115 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import SitemapTool from './pages/SitemapTool';
-import './App.css';
+import SeoServicesDelhi from './pages/SeoServicesDelhi';
+import SeoServicesRohini from './pages/SeoServicesRohini';
+import SeoServicesNoida from './pages/SeoServicesNoida';
+import SeoServicesLaxmiNagar from './pages/SeoServicesLaxmiNagar';
+import SeoCompanyJanakpuri from './pages/SeoCompanyJanakpuri';
+import SeoGuides from './pages/SeoGuides';
+import DigitalMarketing from './pages/DigitalMarketing';
+import CareerGuidance from './pages/CareerGuidance';
+import GoogleCoreUpdates from './pages/GoogleCoreUpdates';
+import TryFreeTools from './pages/TryFreeTools';
+import BulkUrlRedirectionTool from './pages/BulkUrlRedirectionTool';
+import GoogleIndexChecker from './pages/GoogleIndexChecker';
+import YouTubeTranscriptTool from './pages/YouTubeTranscriptTool';
+import BulkAnchorTextGenerators from './pages/BulkAnchorTextGenerators';
+import YouTubeTagGenerator from './pages/YouTubeTagGenerator';
+import WhatsAppChatLink from './pages/WhatsAppChatLink';
+import CommaSeparatorTool from './pages/CommaSeparatorTool';
+import YouTubeVideoTagsExtractor from './pages/YouTubeVideoTagsExtractor';
+import UrlDomainExtractor from './pages/UrlDomainExtractor';
+import BacklinkGeneratorTool from './pages/BacklinkGeneratorTool';
+import ImageCompressor from './pages/ImageCompressor';
+import AboutUsPageGenerator from './pages/AboutUsPageGenerator';
+import MobileFriendlyTesterTool from './pages/MobileFriendlyTesterTool';
+import CanonicalTagGenerator from './pages/CanonicalTagGenerator';
+import ContactMe from './pages/ContactMe';
+import Disclaimer from './pages/Disclaimer';
+import TermsAndConditions from './pages/TermsAndConditions';
+import WriteForUs from './pages/WriteForUs';
+import Sitemap from './pages/Sitemap';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import AdPostPage from './pages/AdPostPage';
+import SocialBookmarkingSites from './pages/SocialBookmarkingSites';
+import GuestPostSites from './pages/GuestPostSites';
+import ArticleSubmissionSites from './pages/ArticleSubmissionSites';
+import DirectorySubmissionSites from './pages/DirectorySubmissionSites';
+import ImageSubmissionSites from './pages/ImageSubmissionSites';
+import VideoSubmissionSites from './pages/VideoSubmissionSites';
+import PinterestDownloader from './pages/PinterestDownloader';
+import InstagramReelDownloader from './pages/InstagramReelDownloader';
+import YouTubeShortsDownloader from './pages/YouTubeShortsDownloader';
+import NotFound from './pages/NotFound';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home />;
-      case 'about':
-        return <AboutUs />;
-      case 'sitemap':
-        return <SitemapTool />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <div className="App">
-      <Header onNavigate={setCurrentPage} />
-      {renderPage()}
-      <footer className="App-footer">
-        <div className="footer-logo">🌐 Website Sitemap</div>
-        <div className="footer-sections">
-          <div className="footer-section">
-            <h4>SEO Services</h4>
-            <ul>
-              <li><a href="#">SEO Services in Delhi</a></li>
-              <li><a href="#">SEO Services in Rohini</a></li>
-              <li><a href="#">SEO Services in Noida</a></li>
-              <li><a href="#">SEO Services in Laxmi Nagar</a></li>
-              <li><a href="#">SEO Company in Janakpuri</a></li>
-            </ul>
+    <Router>
+      <ErrorBoundary>
+        <div className="App">
+          <Header />
+          <div className="fluid-container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/sitemap-tool" element={<SitemapTool />} />
+              <Route path="/seo-services-delhi" element={<SeoServicesDelhi />} />
+              <Route path="/seo-services-rohini" element={<SeoServicesRohini />} />
+              <Route path="/seo-services-noida" element={<SeoServicesNoida />} />
+              <Route path="/seo-services-laxmi-nagar" element={<SeoServicesLaxmiNagar />} />
+              <Route path="/seo-company-janakpuri" element={<SeoCompanyJanakpuri />} />
+              <Route path="/seo-guides" element={<SeoGuides />} />
+              <Route path="/digital-marketing" element={<DigitalMarketing />} />
+              <Route path="/career-guidance" element={<CareerGuidance />} />
+              <Route path="/google-core-updates" element={<GoogleCoreUpdates />} />
+              <Route path="/try-free-tools" element={<TryFreeTools />} />
+              <Route path="/bulk-url-redirection-tool" element={<BulkUrlRedirectionTool />} />
+              <Route path="/google-index-checker" element={<GoogleIndexChecker />} />
+              <Route path="/youtube-transcript-tool" element={<YouTubeTranscriptTool />} />
+              <Route path="/bulk-anchor-text-generators" element={<BulkAnchorTextGenerators />} />
+              <Route path="/youtube-tag-generator" element={<YouTubeTagGenerator />} />
+              <Route path="/whatsapp-chat-link" element={<WhatsAppChatLink />} />
+              <Route path="/comma-separator-tool" element={<CommaSeparatorTool />} />
+              <Route path="/youtube-video-tags-extractor" element={<YouTubeVideoTagsExtractor />} />
+              <Route path="/url-domain-extractor" element={<UrlDomainExtractor />} />
+              <Route path="/backlink-generator-tool" element={<BacklinkGeneratorTool />} />
+              <Route path="/image-compressor" element={<ImageCompressor />} />
+              <Route path="/about-us-page-generator" element={<AboutUsPageGenerator />} />
+              <Route path="/mobile-friendly-tester-tool" element={<MobileFriendlyTesterTool />} />
+              <Route path="/canonical-tag-generator" element={<CanonicalTagGenerator />} />
+              <Route path="/contact-me" element={<ContactMe />} />
+              <Route path="/disclaimer" element={<Disclaimer />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/write-for-us" element={<WriteForUs />} />
+              <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/ad-post-sites" element={<AdPostPage />} />
+              <Route path="/social-bookmarking-sites" element={<SocialBookmarkingSites />} />
+              <Route path="/guest-post-sites" element={<GuestPostSites />} />
+              <Route path="/article-submission-sites" element={<ArticleSubmissionSites />} />
+              <Route path="/directory-submission-sites" element={<DirectorySubmissionSites />} />
+              <Route path="/image-submission-sites" element={<ImageSubmissionSites />} />
+              <Route path="/video-submission-sites" element={<VideoSubmissionSites />} />
+              <Route path="/sitemap-tool" element={<SitemapTool />} />
+              <Route path="/InstagramReelDownloader" element={<InstagramReelDownloader />} />
+              <Route path="/YouTubeShortsDownloader" element={<YouTubeShortsDownloader />} />
+              <Route path="/PinterestDownloader" element={<PinterestDownloader />} />
+              {/* Redirect old paths to new ones */}                                                          
+
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </div>
-          <div className="footer-section">
-            <h4>Categories</h4>
-            <ul>
-              <li><a href="#">SEO Guides</a></li>
-              <li><a href="#">Digital Marketing</a></li>
-              <li><a href="#">Career Guidance</a></li>
-              <li><a href="#">Google Core Updates</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Try free Tools</a></li>
-              <li><a href="#">Bulk URL Redirection Tool</a></li>
-              <li><a href="#">Google Index Checker</a></li>
-              <li><a href="#">YouTube Transcript Tool</a></li>
-              <li><a href="#">Bulk Anchor Text Generators</a></li>
-              <li><a href="#">YouTube Tag Generator</a></li>
-              <li><a href="#">WhatsApp Chat Link</a></li>
-              <li><a href="#">Comma Separator Tool</a></li>
-              <li><a href="#">YouTube Video Tags Extractor</a></li>
-              <li><a href="#">URL Domain Extractor</a></li>
-              <li><a href="#">Backlink Generator Tool</a></li>
-              <li><a href="#">Image Compressor</a></li>
-              <li><a href="#">About Us Page Generator</a></li>
-              <li><a href="#">Mobile-Friendly Tester Tool</a></li>
-              <li><a href="#">Canonical Tag Generator</a></li>
-            </ul>
-          </div>
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Contact me</a></li>
-              <li><a href="#">Disclaimer</a></li>
-              <li><a href="#">Terms and Conditions</a></li>
-              <li><a href="#">Write For Us</a></li>
-              <li><a href="#">Sitemap</a></li>
-            </ul>
-          </div>
+          <Footer />
         </div>
-        <div className="footer-legal">
-          <p>©2022 SEO Shades copyright all rights reserved.</p>
-          <p><a href="#">Disclaimer</a> | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
-        </div>
-      </footer>
-    </div>
+      </ErrorBoundary>
+    </Router>
   );
 }
 

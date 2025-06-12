@@ -29,9 +29,7 @@ const icon = {
   authority: "🏅",
 };
 
-import TopSlider from '../components/TopSlider';
-
-const Home = () => {
+const SeoServicesDelhi = () => {
   return (
     <>
       <style>
@@ -155,7 +153,6 @@ const Home = () => {
       </style>
       <div className="seo-services-delhi">
         <main className="seo-main-content">
-          <TopSlider />
           <section className="section hero-section">
             <h1>🚀 Top-Rated SEO Services in Delhi to Boost Your Business</h1>
             <p>
@@ -280,4 +277,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SeoServicesDelhi;

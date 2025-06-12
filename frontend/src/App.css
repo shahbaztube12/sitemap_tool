@@ -1,3 +1,16 @@
+/* Define CSS variables for colors */
+:root {
+  --color-primary: #004080;
+  --color-primary-light: #0059b3;
+  --color-primary-medium: #0066cc;
+  --color-primary-dark: #003366;
+  --color-background: #f0f8ff;
+  --color-text: #003366;
+  --color-white: #ffffff;
+  --color-button-hover: #005bb5;
+  --color-button-disabled: #99c2ff;
+}
+
 /* Reset and base styles */
 * {
   box-sizing: border-box;
@@ -5,11 +18,19 @@
   padding: 0;
 }
 
+fluid-container{
+  max-width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
 body, html, #root, .App {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f8ff; /* Alice Blue */
-  color: #003366; /* Dark Blue */
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 .App {
@@ -20,9 +41,9 @@ body, html, #root, .App {
 
 /* Header styles */
 .App-header {
-  background-color: #004080; /* Navy Blue */
+  background-color: var(--color-primary);
   padding: 10px 20px;
-  color: white;
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +54,7 @@ body, html, #root, .App {
   font-weight: bold;
   font-size: 24px;
   cursor: pointer;
-  color: white;
+  color: var(--color-white);
 }
 
 .nav-bar {
@@ -58,18 +79,18 @@ body, html, #root, .App {
   padding: 5px 10px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  color: white;
+  color: var(--color-white);
 }
 
 .nav-item:hover {
-  background-color: #0066cc; /* Medium Blue */
+  background-color: var(--color-primary-medium);
 }
 
 .dropdown-menu {
   position: absolute;
   top: 35px;
   left: 0;
-  background-color: #0059b3; /* Darker Blue */
+  background-color: var(--color-primary-light);
   border-radius: 4px;
   list-style: none;
   padding: 10px 0;
@@ -84,7 +105,7 @@ body, html, #root, .App {
 }
 
 .dropdown-menu li a {
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
 }
 
@@ -99,15 +120,15 @@ main.page-content {
   max-width: 1000px;
   margin: 0 auto;
   text-align: left;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* Footer styles */
 .App-footer {
-  background-color: #004080; /* Navy Blue */
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: 30px 20px;
   font-size: 14px;
   text-align: center;
@@ -134,7 +155,7 @@ main.page-content {
 
 .footer-section h4 {
   margin-bottom: 12px;
-  border-bottom: 2px solid #0073e6;
+  border-bottom: 2px solid var(--color-primary-medium);
   padding-bottom: 6px;
 }
 
@@ -154,7 +175,7 @@ main.page-content {
 }
 
 .footer-section ul li a:hover {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .footer-legal p {
@@ -173,8 +194,8 @@ main.page-content {
 
 /* Buttons */
 button {
-  background-color: #0073e6;
-  color: white;
+  background-color: var(--color-primary-medium);
+  color: var(--color-white);
   border: none;
   padding: 8px 16px;
   font-size: 16px;
@@ -184,12 +205,12 @@ button {
 }
 
 button:disabled {
-  background-color: #99c2ff;
+  background-color: var(--color-button-disabled);
   cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
-  background-color: #005bb5;
+  background-color: var(--color-button-hover);
 }
 
 /* Inputs */
@@ -197,7 +218,7 @@ input[type="url"] {
   padding: 8px;
   font-size: 16px;
   width: 300px;
-  border: 1px solid #0073e6;
+  border: 1px solid var(--color-primary-medium);
   border-radius: 4px;
   margin-right: 10px;
 }
@@ -219,3 +240,5 @@ input[type="url"] {
     padding: 20px;
   }
 }
+
+/* Fluid container for all pages */

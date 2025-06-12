@@ -29,9 +29,7 @@ const icon = {
   authority: "🏅",
 };
 
-import TopSlider from '../components/TopSlider';
-
-const Home = () => {
+const SeoServicesRohini = () => {
   return (
     <>
       <style>
@@ -155,11 +153,10 @@ const Home = () => {
       </style>
       <div className="seo-services-delhi">
         <main className="seo-main-content">
-          <TopSlider />
           <section className="section hero-section">
-            <h1>🚀 Top-Rated SEO Services in Delhi to Boost Your Business</h1>
+            <h1>🚀 Top-Rated SEO Services in Rohini to Boost Your Business</h1>
             <p>
-              Maximize your online visibility with our expert SEO services tailored for businesses in Delhi.<br />
+              Maximize your online visibility with our expert SEO services tailored for businesses in Rohini.<br />
               Get more traffic, leads, and sales with our customized SEO strategies.
             </p>
           </section>
@@ -193,7 +190,7 @@ const Home = () => {
           </section>
 
           <section className="section result-driven">
-            <h2>{icon.result} Result-Driven SEO Services in Delhi NCR</h2>
+            <h2>{icon.result} Result-Driven SEO Services in Rohini</h2>
             <ul>
               <li>{icon.local} Local SEO</li>
               <li>{icon.ecommerce} E-commerce SEO</li>
@@ -226,7 +223,7 @@ const Home = () => {
           </section>
 
           <section className="section about-company">
-            <h2>{icon.happy} CyberWorx Technologies: The #1 Best SEO Company in Delhi</h2>
+            <h2>{icon.happy} CyberWorx Technologies: The #1 Best SEO Company in Rohini</h2>
             <p>
               With years of experience and a portfolio of happy clients, we offer expert SEO services tailored to all types of businesses.
             </p>
@@ -257,12 +254,12 @@ const Home = () => {
           </section>
 
           <section className="section location">
-            <h2>{icon.office} Contact Our SEO Experts in Delhi NCR</h2>
+            <h2>{icon.office} Contact Our SEO Experts in Rohini</h2>
             <p>Visit our office or call us to schedule your free consultation.</p>
           </section>
 
           <section className="section contact-form">
-            <h3>{icon.expert} Ready to Elevate Your Delhi Business with SEO?</h3>
+            <h3>{icon.expert} Ready to Elevate Your Rohini Business with SEO?</h3>
             <p>Contact our SEO experts today and discover how we can help you dominate the search engine results pages.</p>
             <a href="/contact" className="btn-primary">{icon.phone} Request a Free SEO Audit</a>
           </section>
@@ -270,7 +267,7 @@ const Home = () => {
           <footer className="section internal-links">
             <p>
               Explore More:
-              <a href="/local-seo-delhi">{icon.local} Local SEO Delhi</a> |
+              <a href="/local-seo-rohini">{icon.local} Local SEO Rohini</a> |
               <a href="/seo-packages">{icon.package} Affordable SEO Packages</a>
             </p>
           </footer>
@@ -280,4 +277,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SeoServicesRohini;
