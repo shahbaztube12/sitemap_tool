@@ -48,6 +48,7 @@ import PinterestDownloader from './pages/PinterestDownloader';
 import InstagramReelDownloader from './pages/InstagramReelDownloader';
 import YouTubeShortsDownloader from './pages/YouTubeShortsDownloader';
 import NotFound from './pages/NotFound';
+import SeoAudit from './pages/SeoAudit';
 
 function App() {
   return (
@@ -101,6 +102,7 @@ function App() {
               <Route path="/InstagramReelDownloader" element={<InstagramReelDownloader />} />
               <Route path="/YouTubeShortsDownloader" element={<YouTubeShortsDownloader />} />
               <Route path="/PinterestDownloader" element={<PinterestDownloader />} />
+              <Route path="/seo-audit" element={<SeoAudit />} />
               {/* Redirect old paths to new ones */}                                                          
 
               <Route path="*" element={<NotFound />} />

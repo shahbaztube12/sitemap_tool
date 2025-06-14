@@ -40,6 +40,7 @@ const Footer = () => {
         { label: 'About Us Page Generator', to: '/about-us-page-generator' },
         { label: 'Mobile-Friendly Tester Tool', to: '/mobile-friendly-tester-tool' },
         { label: 'Canonical Tag Generator', to: '/canonical-tag-generator' },
+        { label: 'Free SEO Audit', to: '/seo-audit' },
       ],
     },
     {

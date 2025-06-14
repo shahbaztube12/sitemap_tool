@@ -27,24 +27,27 @@ function Header() {
           ☰
         </button>
         <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
-          <ul className="nav-list">
-            {/* <li><Link to="/" onClick={toggleMobileMenu}>Home</Link></li>
-            <li><Link to="/about" onClick={toggleMobileMenu}>About Us</Link></li> */}
+            <ul className="nav-list">
+              {/* <li><Link to="/" onClick={toggleMobileMenu}>Home</Link></li>
+              <li><Link to="/about" onClick={toggleMobileMenu}>About Us</Link></li> */}
 
-            <li className="dropdown">
-              <button onClick={() => toggleDropdown('seoServices')}>
-                SEO Services ▾
-              </button>
-              {openDropdown === 'seoServices' && (
-                <ul className="dropdown-menu">
-                  <li><Link to="/seo-services-delhi">SEO Services in Delhi</Link></li>
-                  <li><Link to="/seo-services-rohini">SEO Services in Rohini</Link></li>
-                  <li><Link to="/seo-services-noida">SEO Services in Noida</Link></li>
-                  <li><Link to="/seo-services-laxmi-nagar">SEO Services in Laxmi Nagar</Link></li>
-                  <li><Link to="/seo-company-janakpuri">SEO Company in Janakpuri</Link></li>
-                </ul>
-              )}
-            </li>
+              <li className="dropdown">
+                <button onClick={() => toggleDropdown('seoServices')}>
+                  SEO Services ▾
+                </button>
+                {openDropdown === 'seoServices' && (
+                  <ul className="dropdown-menu">
+                    <li><Link to="/seo-services-delhi">SEO Services in Delhi</Link></li>
+                    <li><Link to="/seo-services-rohini">SEO Services in Rohini</Link></li>
+                    <li><Link to="/seo-services-noida">SEO Services in Noida</Link></li>
+                    <li><Link to="/seo-services-laxmi-nagar">SEO Services in Laxmi Nagar</Link></li>
+                    <li><Link to="/seo-company-janakpuri">SEO Company in Janakpuri</Link></li>
+                  </ul>
+                )}
+              </li>
+              <li>
+                <Link to="/seo-audit" onClick={toggleMobileMenu}>Free SEO Audit</Link>
+              </li>
 
             <li className="dropdown">
               <button onClick={() => toggleDropdown('categories')}>
