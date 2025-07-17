@@ -1,0 +1,10 @@
+url: 'https://example.com',
+      title: 'Example Website',
+      description: 'Test website for crawling'
+    });
+=======
+    const response = await axios.post(\`\${baseUrl}/websites\`, {
+      url: 'https://example.com',
+      title: 'Example Website',
+      description: 'Test website for crawling'
+    });

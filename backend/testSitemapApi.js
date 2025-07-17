@@ -1,23 +1,18 @@
 const axios = require('axios');
 
-async function testGenerateSitemap() {
+const baseUrl = 'http://localhost:4000'; // Adjust if backend runs on different host/port
+
+async function testCreateWebsite() {
   try {
-    const response = await axios.post('http://localhost:4000/api/sitemap/', {
-      url: 'https://bhurjisurfacegrinder.com'
+    const response = await axios.post(`${baseUrl}/api/sitemap`, {
+      url: 'https://www.racksmart.in/',
+      title: 'Example Website',
+      description: 'Test website for crawling'
     });
-    console.log('Response:', response.data);
+    console.log('Create Website Response:', response.data);
   } catch (error) {
-    if (error.response) {
-      console.error('Error response data:', error.response.data);
-      console.error('Error response status:', error.response.status);
-      console.error('Error response headers:', error.response.headers);
-    } else if (error.request) {
-      console.error('No response received:', error.request);
-    } else {
-      console.error('Error setting up request:', error.message);
-    }
-    console.error('Full error:', error);
+    console.error('Error creating website:', error.response ? error.response.data : error.message);
   }
 }
 
-testGenerateSitemap();
+testCreateWebsite();

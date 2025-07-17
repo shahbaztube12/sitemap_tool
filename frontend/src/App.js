@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -49,6 +49,8 @@ import InstagramReelDownloader from './pages/InstagramReelDownloader';
 import YouTubeShortsDownloader from './pages/YouTubeShortsDownloader';
 import NotFound from './pages/NotFound';
 import SeoAudit from './pages/SeoAudit';
+import SeoOptimizedPage from './pages/SeoOptimizedPage';
+import ViralPrompts from './pages/ViralPrompts';
 
 function App() {
   return (
@@ -104,6 +106,9 @@ function App() {
               <Route path="/PinterestDownloader" element={<PinterestDownloader />} />
               <Route path="/seo-audit" element={<SeoAudit />} />
               {/* Redirect old paths to new ones */}                                                          
+
+              <Route path="/seo-optimized-page" element={<SeoOptimizedPage />} />
+              <Route path="/viral-prompts" element={<ViralPrompts />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,4 +1,4 @@
-import React from 'react';
+import SEO from '../components/SEO';
 import TopSlider from '../components/TopSlider';
 
 const icon = {
@@ -33,6 +33,102 @@ const icon = {
 const Home = () => {
   return (
     <>
+      <SEO
+        title="Top SEO Services in Delhi | Tarkashot - Boost Your Business"
+        description="Get top-rated SEO services in Delhi to boost your business. Expert SEO strategies, on-page optimization, link building, and more. Contact us for a free SEO audit."
+        canonical="https://tarkashot.com/"
+      >
+        {/* JSON-LD Schema Markup */}
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Tarkashot",
+            "url": "https://tarkashot.com",
+            "logo": "https://tarkashot.com/logo192.png",
+            "sameAs": [
+              "https://www.facebook.com/tarkashot",
+              "https://twitter.com/tarkashot",
+              "https://www.linkedin.com/company/tarkashot"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-8800990012",
+              "contactType": "Customer Service",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Hindi"]
+            }
+          }
+          `}
+        </script>
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tarkashot.com/"
+              }
+            ]
+          }
+          `}
+        </script>
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is SEO and how does it help my business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEO (Search Engine Optimization) improves your website’s visibility on Google by optimizing technical structure, content quality, and backlinks. It helps attract more traffic, build authority, and drive conversions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does SEO take to show measurable results?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Generally, you can expect noticeable results in 3–6 months. However, factors like competition, domain age, and website condition can affect timelines."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What types of businesses do you provide SEO for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tarkashot.com offers SEO services for local businesses, e-commerce stores, tech startups, healthcare, education, and many more industries across India and globally."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is SEO better than paid ads?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SEO provides long-term, compounding ROI and brand authority, while paid ads offer short-term bursts. The best strategy often combines both."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer white-label SEO services?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we partner with agencies to deliver private-label SEO solutions with full transparency and reporting."
+                }
+              }
+            ]
+          }
+          `}
+        </script>
+      </SEO>
       <style>
         {`
           body {
@@ -203,161 +299,204 @@ const Home = () => {
             </div>
           </section>
 
-          {/* SERVICES OVERVIEW */}
-          <section 
-            className="section services-overview" 
-            style={{ padding: '4rem 1rem', backgroundColor: '#fff' }}
-          >
-            <div 
-              className="container" 
-              style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}
-            >
-              {/* Top Title and Description */}
-              <div className="services-header" style={{ marginBottom: '3rem' }}>
-                <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#222' }}>
-                  🚀 Boost Your Visibility with Our SEO Services
-                </h2>
-                <p style={{ fontSize: '1.125rem', color: '#555', maxWidth: '750px', margin: '0 auto' }}>
-                  Discover powerful, result-driven <strong>SEO services in Delhi</strong> crafted to improve your rankings,
-                  drive qualified traffic, and increase conversions. Our strategies are built on proven techniques and 
-                  align with Google's latest ranking factors.
-                </p>
-              </div>
-              {/* Services Grid */}
-              <div 
-                className="services-grid" 
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center',
-                  gap: '2rem'
-                }}
-              >
-                {/* SEO Service Cards */}
-                {[
-                  { icon: icon.keyword, title: 'Keyword Research & Strategy' },
-                  { icon: icon.onpage, title: 'On-Page SEO Optimization' },
-                  { icon: icon.technical, title: 'Technical SEO Audits' },
-                  { icon: icon.link, title: 'High-Quality Link Building' },
-                  { icon: icon.content, title: 'SEO-Driven Content Marketing' },
-                  { icon: icon.growth, title: 'Analytics & Growth Reporting' }
-                ].map((service, idx) => (
-                  <div 
-                    key={idx}
-                    className="service-card"
-                    style={{
-                      flex: '1 1 300px',
-                      maxWidth: '300px',
-                      backgroundColor: '#f8f8f8',
-                      padding: '1.75rem 1.25rem',
-                      borderRadius: '10px',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                      textAlign: 'center',
-                      cursor: 'pointer',
-                      boxSizing: 'border-box'
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.transform = 'translateY(-6px)';
-                      e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.1)';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
-                    <div 
-                      className="icon" 
-                      style={{ 
-                        fontSize: '2.5rem', 
-                        marginBottom: '1rem', 
-                        color: '#0073e6' 
-                      }}
-                    >
-                      {service.icon}
-                    </div>
-                    <h3 
-                      style={{ 
-                        fontSize: '1.15rem', 
-                        fontWeight: '600', 
-                        color: '#222' 
-                      }}
-                    >
-                      {service.title}
-                    </h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+         <section className="services-overview">
+  <div className="services-header">
+    <h2>🚀 Boost Your Visibility with Our SEO Services</h2>
+    <p>
+      Discover powerful, result-driven <strong>SEO services in Delhi</strong> crafted to improve
+      your rankings, drive qualified traffic, and increase conversions. Our strategies
+      align with Google's latest ranking factors.
+    </p>
+  </div>
+
+  <div className="services-grid">
+    {[
+      { icon: icon.keyword, title: 'Keyword Research & Strategy' },
+      { icon: icon.onpage, title: 'On-Page SEO Optimization' },
+      { icon: icon.technical, title: 'Technical SEO Audits' },
+      { icon: icon.link, title: 'High-Quality Link Building' },
+      { icon: icon.content, title: 'SEO-Driven Content Marketing' },
+      { icon: icon.growth, title: 'Analytics & Growth Reporting' },
+    ].map((service, idx) => (
+      <article className="service-card" key={idx}>
+        <div className="service-icon">{service.icon}</div>
+        <h3>{service.title}</h3>
+      </article>
+    ))}
+  </div>
+</section>
+
 
 <style>
   {`
-    .why-seo-important-section {
-      background-color: #f9f9f9;
-      padding: 4rem 1rem;
-    }
-    .why-seo-important-section h2 {
-      font-size: 2.5rem;
-      color: #222;
-      font-weight: 700;
-    }
-    .why-seo-important-section p {
-      max-width: 900px;
-      margin: 0 auto 2rem auto;
-      font-size: 1.125rem;
-      color: #555;
-      line-height: 1.75;
-    }
-    .seo-benefits-table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-    }
-    .seo-benefits-table thead {
-      background-color: #0073e6;
-      color: white;
-    }
-    .seo-benefits-table th,
-    .seo-benefits-table td {
-      padding: 1rem;
-      text-align: left;
-    }
-    .seo-benefits-table tr:nth-child(even) {
-      background-color: #f1f5f9;
-    }
-    .seo-benefits-table tr:nth-child(odd) {
-      background-color: #ffffff;
-    }
-    @media screen and (max-width: 768px) {
-      .why-seo-important-section h2 {
-        font-size: 2rem;
-      }
-      .why-seo-important-section p {
-        font-size: 1rem;
-      }
-    }
+
+  .services-overview {
+  padding: 4rem 1rem;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.services-header h2 {
+  font-size: 2.25rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.services-header p {
+  font-size: 1.125rem;
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Cards style */
+.service-card {
+  background-color: #f8f8f8;
+  padding: 1.75rem 1.25rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0073e6;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Responsive - tablets */
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Responsive - desktops */
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+  
+  
+.why-seo-important-section {
+  background-color: #f9f9f9;
+  padding: 3rem 1rem;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-header h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.seo-benefits-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  min-width: 500px; /* for scroll on small screens */
+}
+
+.seo-benefits-table th,
+.seo-benefits-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.seo-benefits-table thead {
+  background-color: #0073e6;
+  color: white;
+}
+
+.seo-benefits-table tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+@media (max-width: 600px) {
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .seo-benefits-table {
+    min-width: 100%;
+  }
+}
+
+
+  
   `}
 </style>
 
-<section className="why-seo-important-section animate__animated animate__fadeInUp">
-  <div className="container">
-    {/* Title and Description */}
-    <div className="text-center animate__animated animate__fadeInDown">
-      <h2>🔍 Why SEO is Crucial for Your Business in 2025</h2>
-      <p>
-        Search Engine Optimization (SEO) is the strategic process of enhancing your website's visibility
-        on search engines like Google. It helps businesses attract organic traffic, build authority, and
-        generate long-term returns without relying on paid ads. In a digital-first world, SEO is essential
-        for establishing credibility, improving the user experience, and outperforming your competition.
-      </p>
+<section className="why-seo-important-section">
+  <div className="container-fluid">
+    {/* Title & Description full width, centered */}
+    <div className="row">
+      <div className="container-fluid text-blue text-center section-header">
+        <h2>🔍 Why SEO is Crucial for Your Business in 2025</h2>
+        <p>
+          SEO boosts your website's visibility, builds trust, and drives organic traffic for long-term growth.
+        </p>
+      </div>
     </div>
 
-    {/* SEO Benefits Table */}
-    <div className="mt-4 animate__animated animate__fadeInUp animate__delay-1s">
-      <div className="table-responsive">
-        <table className="seo-benefits-table">
+    {/* Table full width */}
+    <div className="row">
+      <div className="container table-wrapper">
+        <table className="seo-benefits-table" aria-label="SEO advantages and their importance">
           <thead>
             <tr>
               <th>SEO Advantage</th>
@@ -367,27 +506,27 @@ const Home = () => {
           <tbody>
             <tr>
               <td>Increased Visibility</td>
-              <td>Higher rankings improve visibility in Google SERPs, allowing potential customers to find your business easily.</td>
+              <td>Higher rankings help customers find your business easily.</td>
             </tr>
             <tr>
-              <td>Targeted Organic Traffic</td>
-              <td>SEO attracts users actively searching for what you offer, increasing qualified traffic with high intent to convert.</td>
+              <td>Targeted Traffic</td>
+              <td>Attracts users actively searching for your products/services.</td>
             </tr>
             <tr>
-              <td>Builds Trust and Authority</td>
-              <td>Users trust websites that rank well; SEO helps build domain authority and enhances brand credibility.</td>
+              <td>Builds Trust</td>
+              <td>SEO enhances brand credibility and authority.</td>
             </tr>
             <tr>
-              <td>Improves User Experience (UX)</td>
-              <td>SEO involves optimizing page speed, mobile usability, and navigation — all critical for UX and engagement.</td>
+              <td>Better User Experience</td>
+              <td>Optimizes site speed and navigation for visitors.</td>
             </tr>
             <tr>
-              <td>Cost-Effective Long-Term ROI</td>
-              <td>Unlike paid ads, SEO generates lasting results and sustainable growth without ongoing advertising costs.</td>
+              <td>Cost-Effective</td>
+              <td>Delivers long-term results without constant ad spend.</td>
             </tr>
             <tr>
-              <td>Supports E-E-A-T Strategy</td>
-              <td>SEO best practices reinforce Expertise, Experience, Authoritativeness, and Trustworthiness — key ranking signals.</td>
+              <td>Supports E-E-A-T</td>
+              <td>Boosts expertise, authoritativeness, and trustworthiness.</td>
             </tr>
           </tbody>
         </table>
@@ -395,6 +534,9 @@ const Home = () => {
     </div>
   </div>
 </section>
+
+
+
 
 
 

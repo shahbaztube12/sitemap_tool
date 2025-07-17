@@ -1,69 +1,53 @@
+const { ObjectId } = require('mongodb');
 const db = require('../db');
 
 class Website {
   static async createTable() {
-    const createWebsitesTable = `
-      CREATE TABLE IF NOT EXISTS websites (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        url VARCHAR(255) NOT NULL,
-        title VARCHAR(255),
-        description TEXT,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )
-    `;
-
-    const createWebsitePagesTable = `
-      CREATE TABLE IF NOT EXISTS website_pages (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        website_id INT NOT NULL,
-        url VARCHAR(255) NOT NULL,
-        title VARCHAR(255),
-        last_crawled TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (website_id) REFERENCES websites(id)
-      )
-    `;
-
-    try {
-      await db.query(createWebsitesTable);
-      await db.query(createWebsitePagesTable);
-      console.log('✅ Tables created or already exist.');
-    } catch (error) {
-      console.error('❌ Error creating tables:', error);
-      throw error; // rethrow to handle upstream
-    }
+    // No need to create tables in MongoDB
+    return;
   }
 
   static async create(websiteData) {
-    const { url, title, description } = websiteData;
-    const [result] = await db.query(
-      'INSERT INTO websites (url, title, description) VALUES (?, ?, ?)',
-      [url, title, description]
-    );
-    return result.insertId;
+    const database = await db.connect();
+    const websitesCollection = database.collection('websites');
+    const result = await websitesCollection.insertOne({
+      url: websiteData.url,
+      title: websiteData.title || null,
+      description: websiteData.description || null,
+      sitemapPath: websiteData.sitemapPath || null,
+      created_at: new Date(),
+    });
+    return result.insertedId;
   }
 
   static async getAll() {
-    const [rows] = await db.query('SELECT * FROM websites');
-    return rows;
+    const database = await db.connect();
+    const websitesCollection = database.collection('websites');
+    const websites = await websitesCollection.find({}).toArray();
+    return websites;
   }
 
   static async savePages(websiteId, pages) {
-    await db.query('DELETE FROM website_pages WHERE website_id = ?', [websiteId]);
+    const database = await db.connect();
+    const pagesCollection = database.collection('website_pages');
+    await pagesCollection.deleteMany({ website_id: new ObjectId(websiteId) });
 
-    for (const page of pages) {
-      await db.query(
-        'INSERT INTO website_pages (website_id, url, title) VALUES (?, ?, ?)',
-        [websiteId, page.url, page.title]
-      );
+    if (pages.length > 0) {
+      const pagesToInsert = pages.map(page => ({
+        website_id: new ObjectId(websiteId),
+        url: page.url,
+        title: page.title || null,
+        last_crawled: new Date(),
+      }));
+      await pagesCollection.insertMany(pagesToInsert);
     }
   }
 
   static async getPages(websiteId) {
-    const [rows] = await db.query(
-      'SELECT * FROM website_pages WHERE website_id = ?',
-      [websiteId]
-    );
-    return rows;
+    const database = await db.connect();
+    const pagesCollection = database.collection('website_pages');
+    const pages = await pagesCollection.find({ website_id: new ObjectId(websiteId) }).toArray();
+    return pages;
   }
 }
 

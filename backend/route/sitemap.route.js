@@ -14,4 +14,10 @@ router.get('/', SitemapController.getWebsites);
 // ✅ GET: Get website pages (id must be number)
 router.get('/:id(\\d+)/pages', SitemapController.getWebsitePages);
 
+// ✅ GET: Serve sitemap.xml file
+router.get('/file', SitemapController.getSitemapFile);
+
+// POST: Generate manual sitemap from React pages
+router.post('/generate-manual', SitemapController.generateManualSitemap);
+
 module.exports = router;

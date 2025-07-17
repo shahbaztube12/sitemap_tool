@@ -1,5 +1,22 @@
 {
   "devDependencies": {
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "axios": "^1.9.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "instagram-url-direct": "^2.0.7",
+    "mongodb": "^6.16.0",
+    "multer": "^2.0.1",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^7.6.1",
+    "react-slick": "^0.30.3",
+    "sharp": "^0.34.2",
+    "slick-carousel": "^1.8.1",
+    "youtube-transcript": "^1.2.1"
   }
 }

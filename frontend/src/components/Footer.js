@@ -43,7 +43,7 @@ const Footer = () => {
         { label: 'Free SEO Audit', to: '/seo-audit' },
       ],
     },
-    {
+      {
       title: 'Quick Links',
       links: [
         { label: 'Home', to: '/' },
@@ -52,6 +52,7 @@ const Footer = () => {
         { label: 'Terms and Conditions', to: '/terms-and-conditions' },
         { label: 'Write For Us', to: '/write-for-us' },
         { label: 'Sitemap', to: '/sitemap' },
+        { label: 'Viral Prompts', to: '/viral-prompts' },
       ],
     },
     {
